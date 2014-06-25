@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+        type="module"
+        version="3.0"
+        client="site"
+        method="upgrade">
+    <name>mod_bw_form_mailer</name>
+    <author>Bocharsky Victor</author>
+    <creationDate>November 2013</creationDate>
+    <copyright>Copyright (C) 2013 BW - Bocharsky Victor. BrainForce Labs. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>mail@brainforce.kiev.ua</authorEmail>
+    <authorUrl>www.brainforce.kiev.ua</authorUrl>
+    <version>1.2.0</version>
+    <description>MOD_BW_FORM_MAILER_DESCRIPTION</description>
+    <files>
+        <filename module="mod_bw_form_mailer">mod_bw_form_mailer.php</filename>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_bw_form_mailer.xml</filename>
+    </files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_bw_form_mailer.ini</language>
+		<language tag="en-GB">en-GB.mod_bw_form_mailer.sys.ini</language>
+		<language tag="ru-RU">ru-RU.mod_bw_form_mailer.ini</language>
+		<language tag="ru-RU">ru-RU.mod_bw_form_mailer.sys.ini</language>
+	</languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        type="radio"
+                        name="captcha"
+                        class="btn-group btn-group-yesno"
+                        label="MOD_BW_FORM_MAILER_CAPTCHA_LABEL"
+                        description="MOD_BW_FORM_MAILER_CAPTCHA_DESCRIPTION"
+                        default="0">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                        type="email"
+                        name="email"
+                        label="MOD_BW_FORM_MAILER_EMAIL_LABEL"
+                        description="MOD_BW_FORM_MAILER_EMAIL_DESCRIPTION"
+                        required="true" />
+                <field
+                        type="text"
+                        name="subject"
+                        label="MOD_BW_FORM_MAILER_SUBJECT_LABEL"
+                        description="MOD_BW_FORM_MAILER_SUBJECT_DESCRIPTION" />
+                <field
+                        type="text"
+                        name="submit"
+                        label="MOD_BW_FORM_MAILER_SUBMIT_LABEL"
+                        description="MOD_BW_FORM_MAILER_SUBMIT_DESCRIPTION" />
+                <field
+                        type="text"
+                        name="redirect"
+                        label="MOD_BW_FORM_MAILER_REDIRECT_LABEL"
+                        description="MOD_BW_FORM_MAILER_REDIRECT_DESCRIPTION" />
+                <field
+                        type="text"
+                        name="unique_key"
+                        label="MOD_BW_FORM_MAILER_UNIQUE_KEY_LABEL"
+                        description="MOD_BW_FORM_MAILER_UNIQUE_KEY_DESCRIPTION" />
+                <field
+                        type="editor"
+                        name="form"
+                        label="MOD_BW_FORM_MAILER_FORM_LABEL"
+                        description='MOD_BW_FORM_MAILER_FORM_DESCRIPTION'
+                        filter="raw" />
+                <field
+                        type="editor"
+                        name="message"
+                        label="MOD_BW_FORM_MAILER_MESSAGE_LABEL"
+                        description="MOD_BW_FORM_MAILER_MESSAGE_DESCRIPTION"
+                        filter="safehtml" />
+                
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                        type="editor"
+                        name="preform"
+                        label="MOD_BW_FORM_MAILER_PREFORM_LABEL"
+                        description="MOD_BW_FORM_MAILER_PREFORM_DESCRIPTION"
+                        filter="raw" />
+                <field
+                        type="editor"
+                        name="postform"
+                        label="MOD_BW_FORM_MAILER_POSTFORM_LABEL"
+                        description="MOD_BW_FORM_MAILER_POSTFORM_DESCRIPTION"
+                        filter="raw" />
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea" rows="3"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                        name="cache"
+                        type="list"
+                        default="1"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+                        name="cache_time"
+                        type="text"
+                        default="900"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field
+                        name="cachemode"
+                        type="hidden"
+                        default="static">
+                    <option value="static"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
